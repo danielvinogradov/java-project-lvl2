@@ -86,8 +86,8 @@ class DifferTest {
      */
     @Test
     void generateYamlStylishTest() throws IOException, StringParserException {
-        String actual = Differ.generate(TestHelper.FIXTURES_YAML_DIR + "file1.yaml",
-                TestHelper.FIXTURES_YAML_DIR + "file2.yaml");
+        String actual = Differ.generate(TestHelper.FIXTURES_YAML_DIR + "file1.yml",
+                TestHelper.FIXTURES_YAML_DIR + "file2.yml");
         String expected = new StringBuilder()
                 .append("{\n")
                 .append("  + applications: [Figma, Adobe Photoshop]\n")
@@ -121,8 +121,8 @@ class DifferTest {
      */
     @Test
     void generateYamlPlainTest() throws IOException, StringParserException {
-        String actual = Differ.generate(TestHelper.FIXTURES_YAML_DIR + "file1.yaml",
-                TestHelper.FIXTURES_YAML_DIR + "file2.yaml", FormatType.PLAIN);
+        String actual = Differ.generate(TestHelper.FIXTURES_YAML_DIR + "file1.yml",
+                TestHelper.FIXTURES_YAML_DIR + "file2.yml", FormatType.PLAIN);
         String expected = new StringBuilder()
                 .append("Property 'applications' was added with value: [complex value]\n")
                 .append("Property 'education' was updated. From '4 GCSEs\n")

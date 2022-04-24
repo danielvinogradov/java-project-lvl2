@@ -17,7 +17,7 @@ public enum FileType {
     /**
      * @see <a href="https://en.wikipedia.org/wiki/YAML">Wiki: YAML</a>
      */
-    YAML(".yaml");
+    YAML(".yml");
 
     /**
      * Расширение файла.

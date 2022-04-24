@@ -12,7 +12,7 @@ class FileTypeTest {
     @Test
     void fromPathTest() {
         Path jsonPath = Paths.get("/some/path/file.json");
-        Path yamlPath = Paths.get("/some/path/file.yaml");
+        Path yamlPath = Paths.get("/some/path/file.yml");
         Path multipleDotsPath = Paths.get("/some/path/file.temp.json");
 
         assertEquals(FileType.JSON, FileType.fromPath(jsonPath));
