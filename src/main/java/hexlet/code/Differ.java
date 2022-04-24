@@ -26,6 +26,13 @@ public final class Differ {
     }
 
     public static String generate(@NotNull final String filePath1,
+                                  @NotNull final String filePath2,
+                                  @NotNull final String formatType)
+            throws IOException, StringParserException {
+        return generate(filePath1, filePath2, FormatType.fromString(formatType));
+    }
+
+    public static String generate(@NotNull final String filePath1,
                                   @NotNull final String filePath2)
             throws IOException, StringParserException {
         return generate(filePath1, filePath2, DEFAULT_FORMAT_TYPE);
