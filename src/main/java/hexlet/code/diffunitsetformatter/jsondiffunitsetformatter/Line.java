@@ -29,7 +29,7 @@ final class Line {
             e.printStackTrace();
         }
 
-        return String.format("  %s \"%s\": %s", operationType.getSign(), key, json);
+        return String.format("  \"%s\": %s", key, json);
     }
 
 }
