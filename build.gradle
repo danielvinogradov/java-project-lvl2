@@ -23,7 +23,7 @@ dependencies {
 }
 
 compileJava {
-    options.release = 17
+    options.release = 11
     options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
 }
 
@@ -37,7 +37,7 @@ jacocoTestReport {
 }
 
 application {
-    mainClassName = 'hexlet.code.App'
+    mainClass.set('hexlet.code.App')
 }
 
 run {
