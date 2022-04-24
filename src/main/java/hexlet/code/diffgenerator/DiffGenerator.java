@@ -7,15 +7,22 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Создает дифф между мапами.
+ * Генератор разницы между значениями ключей в мапах.
  */
 public interface DiffGenerator {
 
     /**
-     * @param data1
-     * @param data2
-     * @return
+     * Сгенерировать diff.
+     * <p>
+     * Возвращаемое значение имеет форму множества DiffUnit. Класс, реализующий интерфейс DiffUnit
+     * должен хранить информацию о состоянии одного ключа и его значения (и предыдущего значения,
+     * если оно есть). Для ключей, отсутствующих в одной из мап или имеющих одинаковое значение,
+     * также должен быть сгенерирован DiffUnit.
+     *
+     * @param data1 Первая мапа.
+     * @param data2 Вторая мапа.
+     * @return Множество DiffUnit.
      */
-    Set<DiffUnit> process(@NotNull final Map<String, Object> data1, @NotNull final Map<String, Object> data2);
+    Set<DiffUnit> process(@NotNull Map<String, Object> data1, @NotNull Map<String, Object> data2);
 
 }

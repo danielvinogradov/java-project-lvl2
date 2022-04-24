@@ -12,8 +12,8 @@ enum OperationType {
 
     private final String sign;
 
-    OperationType(@NotNull final String sign) {
-        this.sign = sign;
+    OperationType(@NotNull final String newSign) {
+        this.sign = newSign;
     }
 
     public String getSign() {

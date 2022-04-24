@@ -23,6 +23,6 @@ public interface FileParser {
      * @throws IOException           Ошибка при чтении файла.
      * @throws StringParserException Ошибка при обработке содержимого файла.
      */
-    Map<String, Object> parse(@NotNull final Path path) throws IOException, StringParserException;
+    Map<String, Object> parse(@NotNull Path path) throws IOException, StringParserException;
 
 }

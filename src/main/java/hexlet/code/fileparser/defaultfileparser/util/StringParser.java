@@ -16,6 +16,6 @@ public interface StringParser {
      * @return Результат парсинга в формате мапы.
      * @throws StringParserException Ошибка парсинга строки.
      */
-    Map<String, Object> parse(@NotNull final String s) throws StringParserException;
+    Map<String, Object> parse(@NotNull String s) throws StringParserException;
 
 }

@@ -10,10 +10,10 @@ final class Line {
 
     private final Object value;
 
-    public Line(@NotNull final OperationType operationType, @NotNull final String key, @NotNull final Object value) {
-        this.operationType = operationType;
-        this.key = key;
-        this.value = value;
+    Line(@NotNull final OperationType newOperationType, @NotNull final String newKey, @NotNull final Object newValue) {
+        this.operationType = newOperationType;
+        this.key = newKey;
+        this.value = newValue;
     }
 
     @Override

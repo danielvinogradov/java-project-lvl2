@@ -9,7 +9,7 @@ import java.util.Objects;
 /**
  * Дефолтная (в приложении единственная) имплементация DiffUnit.
  */
-public class DefaultDiffUnit implements DiffUnit {
+public final class DefaultDiffUnit implements DiffUnit {
 
     /**
      * Ключ.
@@ -31,31 +31,40 @@ public class DefaultDiffUnit implements DiffUnit {
      */
     private DiffUnitType type;
 
-    public DefaultDiffUnit(@NotNull String key,
-                           final boolean keyExistsCurrent,
-                           final Object currentValue,
-                           final boolean keyExistsPrevious,
-                           final Object previousValue) {
-        this.key = key;
-        this.currentValue = currentValue;
-        this.previousValue = previousValue;
-        setType(currentValue, previousValue, keyExistsCurrent, keyExistsPrevious);
+    public DefaultDiffUnit(@NotNull String newKey,
+                           final boolean newKeyExistsCurrent,
+                           final Object newCurrentValue,
+                           final boolean newKeyExistsPrevious,
+                           final Object newPreviousValue) {
+        this.key = newKey;
+        this.currentValue = newCurrentValue;
+        this.previousValue = newPreviousValue;
+        setType(newCurrentValue, newPreviousValue, newKeyExistsCurrent, newKeyExistsPrevious);
     }
 
     /**
      * По предыдущему и текущему значению определяет статус (изменилось/удалено/добавлено и т.д.).
      *
-     * @param currentValue  Текущее значение.
-     * @param previousValue Предыдущее значение.
+     * @param currentValueP      Текущее значение.
+     * @param previousValueP     Предыдущее значение.
+     * @param keyExistsCurrent  Существует ли ключ сейчас.
+     * @param keyExistsPrevious Существовал ли ключ раньше.
      */
-    private void setType(final Object currentValue, final Object previousValue, final boolean keyExistsCurrent, final boolean keyExistsPrevious) {
-        if (!keyExistsCurrent) { // значение удалено
+    private void setType(final Object currentValueP,
+                         final Object previousValueP,
+                         final boolean keyExistsCurrent,
+                         final boolean keyExistsPrevious) {
+        if (!keyExistsCurrent) {
+            // значение удалено
             type = DiffUnitType.DELETED;
-        } else if (!keyExistsPrevious) { // значение добавлено
+        } else if (!keyExistsPrevious) {
+            // значение добавлено
             type = DiffUnitType.ADDED;
-        } else if (currentValue == null ? Objects.isNull(previousValue) : currentValue.equals(previousValue)) { // значение не изменилось
+        } else if (currentValueP == null ? Objects.isNull(previousValueP) : currentValueP.equals(previousValueP)) {
+            // значение не изменилось
             type = DiffUnitType.UNCHANGED;
-        } else { // значение изменилось
+        } else {
+            // значение изменилось
             type = DiffUnitType.CHANGED;
         }
     }

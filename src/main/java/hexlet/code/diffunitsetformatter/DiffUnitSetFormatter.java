@@ -10,6 +10,6 @@ import java.util.Set;
  */
 public interface DiffUnitSetFormatter {
 
-    String format(@NotNull final Set<DiffUnit> diffUnitSet);
+    String format(@NotNull Set<DiffUnit> diffUnitSet);
 
 }

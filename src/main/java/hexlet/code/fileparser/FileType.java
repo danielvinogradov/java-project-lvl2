@@ -20,12 +20,12 @@ public enum FileType {
     YAML(".yaml");
 
     /**
-     * Расширение файла
+     * Расширение файла.
      */
     private final String extension;
 
-    FileType(@NotNull final String extension) {
-        this.extension = extension;
+    FileType(@NotNull final String newExtension) {
+        this.extension = newExtension;
     }
 
     /**

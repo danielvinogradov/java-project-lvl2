@@ -22,9 +22,9 @@ public enum OperationType {
 
     private final Function<Line, String> fn;
 
-    OperationType(@NotNull final String verb, @NotNull final Function<Line, String> fn) {
-        this.verb = verb;
-        this.fn = fn;
+    OperationType(@NotNull final String newVerb, @NotNull final Function<Line, String> newFn) {
+        this.verb = newVerb;
+        this.fn = newFn;
     }
 
     public String getVerb() {

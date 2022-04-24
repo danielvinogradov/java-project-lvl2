@@ -6,17 +6,17 @@ package hexlet.code.diffunitsetformatter;
 public enum FormatType {
 
     /**
-     * {@link hexlet.code.diffunitsetformatter.stylishdiffunitsetformatter.StylishDiffUnitSetFormatter}
+     * Реализация {@link hexlet.code.diffunitsetformatter.stylishdiffunitsetformatter.StylishDiffUnitSetFormatter}.
      */
     STYLISH,
 
     /**
-     * {@link hexlet.code.diffunitsetformatter.plaindiffunitsetformatter.PlainDiffUnitSetFormatter}
+     * Реализация {@link hexlet.code.diffunitsetformatter.plaindiffunitsetformatter.PlainDiffUnitSetFormatter}.
      */
     PLAIN,
 
     /**
-     * {@link hexlet.code.diffunitsetformatter.jsondiffunitsetformatter.JsonDiffUnitSetFormatter}
+     * Реализация {@link hexlet.code.diffunitsetformatter.jsondiffunitsetformatter.JsonDiffUnitSetFormatter}.
      */
     JSON
 

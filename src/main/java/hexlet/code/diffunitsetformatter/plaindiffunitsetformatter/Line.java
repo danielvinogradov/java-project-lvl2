@@ -17,14 +17,14 @@ final class Line {
 
     private final Object previousValue;
 
-    public Line(@NotNull final OperationType operationType,
-                @NotNull final String key,
-                @NotNull final Object value,
-                @NotNull final Object previousValue) {
-        this.operationType = operationType;
-        this.key = key;
-        this.value = value;
-        this.previousValue = previousValue;
+    Line(@NotNull final OperationType newOperationType,
+                @NotNull final String newKey,
+                @NotNull final Object newValue,
+                @NotNull final Object newPreviousValue) {
+        this.operationType = newOperationType;
+        this.key = newKey;
+        this.value = newValue;
+        this.previousValue = newPreviousValue;
     }
 
     public String getKey() {
