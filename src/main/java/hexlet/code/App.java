@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 
 @Command(name = "gendiff", mixinStandardHelpOptions = true, version = "gendiff 1.0",
         description = "Prints the diff between two files to STDOUT.")
-public class App implements Callable<Integer> {
+public final class App implements Callable<Integer> {
 
     @Parameters(index = "0", description = "path to first file")
     private String filePath1;
