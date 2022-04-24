@@ -43,3 +43,4 @@ application {
 run {
     standardInput = System.in
 }
+
