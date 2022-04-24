@@ -75,4 +75,62 @@ class DifferTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     * Тестирует работу с 2 yaml файлами.
+     * <p>
+     * Формат вывода {@link FormatType#STYLISH}.
+     */
+    @Test
+    void generate_yaml_stylish_test() throws IOException, StringParserException {
+        String actual = Differ.generate(TestHelper.FIXTURES_YAML_DIR + "file1.yaml",
+                TestHelper.FIXTURES_YAML_DIR + "file2.yaml");
+        String expected = "{\n" +
+                "  + applications: [Figma, Adobe Photoshop]\n" +
+                "  - education: 4 GCSEs\n" +
+                "3 A-Levels\n" +
+                "BSc in the Internet of Things\n" +
+                "\n" +
+                "  + education: BSc in Web Design\n" +
+                "Some Design Bootcamp\n" +
+                "\n" +
+                "    employed: true\n" +
+                "  - foods: [Apple, Orange, Strawberry, Mango]\n" +
+                "  + foods: [Apple, Strawberry, Milk]\n" +
+                "  - job: Developer\n" +
+                "  + job: Designer\n" +
+                "  - languages: {perl=Elite, python=Elite, pascal=Lame}\n" +
+                "  - name: Martin D'vloper\n" +
+                "  + name: Mikey D'vloper\n" +
+                "  - skill: Elite\n" +
+                "  + skill: Mediocre\n" +
+                "}";
+
+        assertEquals(expected, actual);
+    }
+
+    /**
+     * Тестирует работу с 2 json файлами.
+     * <p>
+     * Формат вывода {@link FormatType#PLAIN}.
+     */
+    @Test
+    void generate_yaml_plain_test() throws IOException, StringParserException {
+        String actual = Differ.generate(TestHelper.FIXTURES_YAML_DIR + "file1.yaml",
+                TestHelper.FIXTURES_YAML_DIR + "file2.yaml", FormatType.PLAIN);
+        String expected = "Property 'applications' was added with value: [complex value]\n" +
+                "Property 'education' was updated. From '4 GCSEs\n" +
+                "3 A-Levels\n" +
+                "BSc in the Internet of Things\n" +
+                "' to 'BSc in Web Design\n" +
+                "Some Design Bootcamp\n" +
+                "'\n" +
+                "Property 'foods' was updated. From [complex value] to [complex value]\n" +
+                "Property 'job' was updated. From 'Developer' to 'Designer'\n" +
+                "Property 'languages' was removed\n" +
+                "Property 'name' was updated. From 'Martin D'vloper' to 'Mikey D'vloper'\n" +
+                "Property 'skill' was updated. From 'Elite' to 'Mediocre'";
+
+        assertEquals(expected, actual);
+    }
+
 }
