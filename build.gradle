@@ -23,7 +23,7 @@ dependencies {
 }
 
 compileJava {
-    options.release = 11
+    options.release = 17
     options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
 }
 
