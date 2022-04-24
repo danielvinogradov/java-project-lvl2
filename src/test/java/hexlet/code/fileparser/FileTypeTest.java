@@ -5,14 +5,14 @@ import org.junit.jupiter.api.Test;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FileTypeTest {
 
     @Test
-    void fromPath() {
+    void fromPathTest() {
         Path jsonPath = Paths.get("/some/path/file.json");
-        Path yamlPath = Paths.get("/some/path/file.yml");
+        Path yamlPath = Paths.get("/some/path/file.yaml");
         Path multipleDotsPath = Paths.get("/some/path/file.temp.json");
 
         assertEquals(FileType.JSON, FileType.fromPath(jsonPath));
