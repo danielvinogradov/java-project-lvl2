@@ -15,12 +15,7 @@ public enum FormatType {
     /**
      * Реализация {@link hexlet.code.diffunitsetformatter.plaindiffunitsetformatter.PlainDiffUnitSetFormatter}.
      */
-    PLAIN("plain"),
-
-    /**
-     * Реализация {@link hexlet.code.diffunitsetformatter.jsondiffunitsetformatter.JsonDiffUnitSetFormatter}.
-     */
-    JSON("json");
+    PLAIN("plain");
 
     private final String description;
 
