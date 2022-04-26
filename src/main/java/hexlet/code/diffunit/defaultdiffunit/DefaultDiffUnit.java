@@ -45,8 +45,8 @@ public final class DefaultDiffUnit implements DiffUnit {
     /**
      * По предыдущему и текущему значению определяет статус (изменилось/удалено/добавлено и т.д.).
      *
-     * @param currentValueP      Текущее значение.
-     * @param previousValueP     Предыдущее значение.
+     * @param currentValueP     Текущее значение.
+     * @param previousValueP    Предыдущее значение.
      * @param keyExistsCurrent  Существует ли ключ сейчас.
      * @param keyExistsPrevious Существовал ли ключ раньше.
      */
@@ -91,8 +91,12 @@ public final class DefaultDiffUnit implements DiffUnit {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         DefaultDiffUnit that = (DefaultDiffUnit) o;
         return key.equals(that.key);
     }
