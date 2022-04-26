@@ -4,7 +4,7 @@ import hexlet.code.diffgenerator.DiffGenerator;
 import hexlet.code.diffgenerator.defaultdiffgenerator.DefaultDiffGenerator;
 import hexlet.code.diffunit.DiffUnit;
 import hexlet.code.diffunitsetformatter.DiffUnitSetFormatter;
-import hexlet.code.diffunitsetformatter.DiffUnitSetFormatterManager;
+import hexlet.code.diffunitsetformatter.DiffUnitSetFormatterFactory;
 import hexlet.code.diffunitsetformatter.FormatType;
 import hexlet.code.fileparser.FileParser;
 import hexlet.code.fileparser.FileType;
@@ -58,7 +58,7 @@ public final class Differ {
         DiffGenerator defaultDiffProcessor = new DefaultDiffGenerator();
         Set<DiffUnit> diffUnitList = defaultDiffProcessor.process(data1, data2);
 
-        DiffUnitSetFormatter diffUnitSetFormatter = DiffUnitSetFormatterManager.getFormatter(formatType);
+        DiffUnitSetFormatter diffUnitSetFormatter = DiffUnitSetFormatterFactory.getFormatter(formatType);
 
         return diffUnitSetFormatter.format(diffUnitList);
     }
